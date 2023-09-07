@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MvcJqueryMobile.Models.Chair>
+
+@{
+    ViewBag.Title = "ChairsList";
+    var Category = "";
+}
+<div data-role="header" data-add-back-btn="true">
+    <a href="#" data-role="button" data-rel="back" data-theme="b">返回</a>
+    <h1>各類型椅子及價格參考</h1>
+</div>
+
+<div data-role="content">
+    <ul data-role="listview" data-inset="true"  data-theme="a" data-divider-theme="b">
+        @foreach (var chair in Model)
+        {
+            //替每個椅子建立List Divider
+            if (Category != chair.Category)
+            {
+                Category = chair.Category;
+                <li data-role="list-divider"><h1>@chair.Category</h1></li>
+            }
+            //顯示每筆資料
+            <li data-icon="false">
+                <a href=@chair.Url>
+                    <img src="~/Assets/images/chairs/@chair.ImageUrl" />
+                    <h2>@chair.Name</h2>
+                    <p>價格:NT$@chair.Price</p>
+                </a>
+            </li>
+
+        }
+
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+
+<div data-role="header" data-add-back-btn="true">
+    <a href="#" data-role="button" data-rel="back" data-theme="b">返回</a>
+    <h1>關於我們</h1>
+</div>
+
+<div role="main" class="ui-content">
+    <h1>建立理念</h1>
+    <div>
+        <img src="~/Assets/images/chairs/IKEA.png" />
+    </div>
+    <p>
+        IKEA希望為大多數人創造更美好的生活，本網頁收集IKEA椅子的相關資訊。
+    </p>
+</div>
+
+@section topCSS{
+    <style>
+        div.ui-content h1 {
+            text-align: center;
+            color: white;
+            background-color:darkcyan;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid black;
+            text-shadow: none;
+        }
+    </style>
+}
